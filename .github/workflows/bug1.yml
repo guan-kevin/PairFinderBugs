@@ -20,3 +20,4 @@ jobs:
         echo "A: ${{ matrix.A }}"
         echo "B: ${{ matrix.B }}"
         echo "C: ${{ matrix.C }}"
+    - run: python dummy.py
