@@ -12,7 +12,25 @@ jobs:
           - A: A3
             B: B3
             C: C3
+    steps:
+    - uses: actions/checkout@v2
+    - name: Print Matrix
+      run: |
+        echo "A: ${{ matrix.A }}"
+        echo "B: ${{ matrix.B }}"
+        echo "C: ${{ matrix.C }}"
+    - run: python dummy.py
 
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - A: A1
+            B: B1
+          - A: A2
+            B: B2
+            C: C2
     steps:
     - uses: actions/checkout@v2
     - name: Print Matrix
