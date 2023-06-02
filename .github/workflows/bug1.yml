@@ -1,0 +1,22 @@
+name: Bug 1
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        A: ["A1", "A2"]
+        B: ["B1", "B2"]
+        include:
+          - A: A3
+            B: B3
+            C: C3
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Print Matrix
+      run: |
+        echo "A: ${{ matrix.A }}"
+        echo "B: ${{ matrix.B }}"
+        echo "C: ${{ matrix.C }}"
