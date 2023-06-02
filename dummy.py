@@ -1,2 +1,2 @@
 # Python project
-print('Typo)
+print('Not a Typo')
